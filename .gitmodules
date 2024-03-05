@@ -1,0 +1,3 @@
+[submodule "d3l"]
+	path = d3l
+	url = https://github.com/alex-bogatu/d3l
