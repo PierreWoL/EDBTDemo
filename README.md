@@ -9,6 +9,7 @@ The 4 dataset discovery and exploration functionalities reviewed in the tutorial
 - **Dataset Navigation.**
 - **Dataset Annotation.**
 - **Schema Inference.**
+
 As an example of how the four functionalities of data discovery and exploration work in practice,
 this repository includes the following frameworks, or parts of them:
 - **D3L - Dataset Discovery.**
