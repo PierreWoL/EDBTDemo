@@ -52,7 +52,7 @@ Ensure you have the following installed:
 
 Clone the repository to your local machine:
 ```bash
-git clone https://github.com/yourusername/yourrepositoryname.git
+git clone https://github.com/PierreWoL/EDBTDemo
 ```
 
 ## Dataset Overview

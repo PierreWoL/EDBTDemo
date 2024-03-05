@@ -1,9 +1,9 @@
+type: dataset
 cff-version: 1.2.0
 message: "This is the dataset that this tutorial uses."
 title: "Dataset Discovery and Exploration: State-of-the-art, Challenges, and Opportunities"
 version: 1.0.0
 date-released: 2024-03-05
-
 references:
   - title: "Web Data Commons - Schema.org Table Corpus 2023"
     year: 2023
