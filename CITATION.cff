@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "This is the dataset that this tutorial uses."
+title: "Dataset Discovery and Exploration: State-of-the-art, Challenges, and Opportunities"
+version: 1.0.0
+date-released: 2024-03-05
+
+references:
+  - title: "Web Data Commons - Schema.org Table Corpus 2023"
+    year: 2023
+    url: "https://webdatacommons.org/structureddata/schemaorgtables/2023/index.html#toc3"
+    type: dataset
+  - title: "T2Dv2 Gold Standard for Matching Web Tables to DBpedia"
+    year: 2023
+    url: "https://webdatacommons.org/webtables/goldstandardV2.html#Limaye2010"
+    type: dataset
