@@ -1,3 +1,6 @@
 [submodule "d3l"]
 	path = d3l
 	url = https://github.com/alex-bogatu/d3l
+[submodule "starmie"]
+	path = starmie
+	url = https://github.com/megagonlabs/starmie
