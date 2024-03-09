@@ -417,6 +417,17 @@ def remove_blanked_token(column):
     return token_list(column_no_empty)
 
 
+def write_pickle(graph, filepath):
+    with open(filepath, 'wb') as f:
+        pickle.dump(graph, f, pickle.HIGHEST_PROTOCOL)
+
+
+def read_pickle(filepath):
+    with open(filepath, 'rb') as f:
+        G = pickle.load(f)
+    return G
+
+
 """
 # 示例使用
 bag_of_words_1 = {'apple': 2, 'banana': 1, 'orange': 1}
