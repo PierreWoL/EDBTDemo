@@ -18,6 +18,13 @@ from urllib.parse import urlparse
 from country_list import countries_for_language
 
 
+def mkdir(path):
+    folder = os.path.exists(path)
+    if not folder:
+        os.makedirs(path)
+        print("---  new folder...  ---")
+
+
 def convergence(previousState, currentState, threshold=0.05, **kwargs):
     """
         Check if the algorithm has converged based on the entropy difference.
