@@ -4,6 +4,3 @@
 [submodule "starmie"]
 	path = starmie
 	url = https://github.com/megagonlabs/starmie
-[submodule "aurum-datadiscovery"]
-	path = aurum-datadiscovery
-	url = https://github.com/mitdbg/aurum-datadiscovery
