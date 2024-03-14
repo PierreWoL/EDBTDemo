@@ -97,11 +97,23 @@ def bow(content):
 def bow(sentence):
     bows = {}
     vectorizer = CountVectorizer()
-    bow_i = vectorizer.fit_transform([sentence.lower()])
-    # Get feature name (vocabulary)
-    feature_names = vectorizer.get_feature_names_out()
-    for word, index in zip(feature_names, bow_i.toarray()[0]):
-        bows[word] = index
+    try:
+        bow_i = vectorizer.fit_transform([sentence.lower()])
+        # Get feature name (vocabulary)
+        feature_names = vectorizer.get_feature_names_out()
+        for word, index in zip(feature_names, bow_i.toarray()[0]):
+            bows[word] = index
+    except:
+        # Tokenize the sentence into words
+        bows = defaultdict(int)
+        words = tokenize_str(sentence).split(" ")
+        # Normalize words and remove stop words
+        words = [word for word in words if word.isalpha()]
+        words = [word.lower() for word in words]
+        # Count the words
+        for word in words:
+            bows[word] += 1
+        bows = dict(bows)
     return bows
 
 

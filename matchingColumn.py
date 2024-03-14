@@ -1,13 +1,17 @@
+import os
 import pickle
 from collections import defaultdict
-from aurum.inputoutput import inputoutput as io
-from aurum.ontomatch import matcher_lib as matcherlib
-from aurum.knowledgerepr import fieldnetwork
-from aurum.modelstore.elasticstore import StoreHandler
-from aurum.ontomatch import glove_api
-from aurum.ontomatch.matcher_lib import MatchingType
-from aurum.ontomatch.ss_api import SSAPI
-from aurum.ontomatch.sem_prop_benchmarking import matchings_basic_pipeline_coh_group_cancellation_and_content
+
+import pandas as pd
+
+from SemProp.inputoutput import inputoutput as io
+from SemProp.ontomatch import matcher_lib as matcherlib
+from SemProp.knowledgerepr import fieldnetwork
+from SemProp.modelstore.elasticstore import StoreHandler
+from SemProp.ontomatch import glove_api
+from SemProp.ontomatch.matcher_lib import MatchingType
+from SemProp.ontomatch.ss_api import SSAPI
+from SemProp.ontomatch.sem_prop_benchmarking import matchings_basic_pipeline_coh_group_cancellation_and_content
 
 
 def list_from_dict(combined):
@@ -92,3 +96,43 @@ class MatchColumn():
 
 
 
+
+PATH = os.getcwd()
+PATH_DATA = os.path.join(PATH, "test/testmodel/")
+print(PATH_DATA)
+SEMANTIC_MODEL = "{}{}".format(PATH, "/glove.42B.300d.txt")
+ONTOLOGY_NAME = "dbpedia"
+PATH_ONTOLOGY = "{}{}".format(PATH, "/aurum/cache_onto/")  # "/aurum/ontomatch/cache_onto/dbpedia.owl"
+print(PATH_ONTOLOGY)
+print(SEMANTIC_MODEL)
+matchCol = MatchColumn(PATH_DATA, ONTOLOGY_NAME, PATH_ONTOLOGY, SEMANTIC_MODEL)
+matching_dict = matchCol.combineMatch(sim_threshold_attr=0.2,
+                      sim_threshold_rel=0.2,
+                      sem_threshold_attr=0.6,
+                      sem_threshold_rel=0.6,
+                      coh_group_threshold=0.5,
+                      coh_group_size_cutoff=2,
+                      sensitivity_cancellation_signal=0.3)
+
+with open("Result/dict.pkl", "rb") as f:
+    table_dict = pickle.load(f)
+
+def find_subcol_matchings(table, subcol, matching):
+    for i in matching:
+        db_tuple, onto_tuple = i[0], i[1]
+        if table == db_tuple[1] and subcol == db_tuple[2]:
+            return onto_tuple
+
+find_match_subcol = []
+table_names = os.listdir("Datasets")
+for table_name in table_names:
+    table = pd.read_csv(f"Datasets/{table_name}")
+    headers = table.columns
+    if len(table_dict[table_name]) > 0:
+        NE_indexes = table_dict[table_name][1]
+        subCol_index = max(NE_indexes, key=lambda k: NE_indexes[k])
+        subcol_header = headers[subCol_index]
+        onto_tuple = find_subcol_matchings(table_name, subcol_header,matching_dict )
+        if onto_tuple is not None:
+            find_match_subcol.append((table_name, subcol_header,onto_tuple))
+print(len(find_match_subcol), find_match_subcol)

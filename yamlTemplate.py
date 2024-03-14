@@ -3,7 +3,7 @@ import os
 import sys
 
 
-def generate_yaml(user_defined_name, path_to_dataset, output_file="aurum/ddprofiler/Dataset.yml"):
+def generate_yaml(user_defined_name, path_to_dataset, output_file="SemProp/ddprofiler/Dataset.yml"):
     print(user_defined_name, path_to_dataset)
     yaml_content = f"""
 #######

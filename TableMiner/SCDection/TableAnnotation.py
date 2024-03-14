@@ -1,3 +1,5 @@
+from time import sleep
+
 import pandas as pd
 import TableMiner.SCDection.SubjectColumnDetection as SCD
 import TableMiner.SCDection.webSearchAPI as Search
@@ -6,7 +8,7 @@ import TableMiner.Utils as util
 
 
 class TableColumnAnnotation:
-    def __init__(self, table: pd.DataFrame, cse_id=""):
+    def __init__(self, table: pd.DataFrame): #, cse_id="c08f6c0abe4964877"
 
         if isinstance(table, pd.DataFrame) is False:
             print("input should be dataframe!")
@@ -46,9 +48,11 @@ class TableColumnAnnotation:
         ws_Ci = {}
         for i, candidate_type in self.annotation.items():
             if candidate_type == SCD.ColumnType.named_entity:
+                print(i,candidate_type )
                 ws_Ci_dict = util.I_inf(self.table.values.tolist(), ws_Ci, self.ws_cell_cal, self.update_ws,
                                         column_index=i, top_K=top_n)
                 self.column_score[i] = sum(ws_Ci_dict.values())
+
             # else:
                # self.column_score[i] = 0
 
@@ -68,6 +72,8 @@ class TableColumnAnnotation:
         # results are the returning results in dictionary format of top n web pages
         # P (webpages) in the paper
         results = self.search.search_result(input_query, top_K)
+        sleep(2)
+
         cell = self.table.iloc[index, column_index]
         if isinstance(cell,float):
             cell_ws_score = 0
@@ -112,7 +118,7 @@ class TableColumnAnnotation:
         def normalized(feature_df):
             norm_df = {}
             for feature_ele in ['uc', 'cm', 'ws', 'emc']:
-                mean =  sum(feature_df.values()) / len(feature_df.values())
+                mean = sum(feature_df.values()) / len(feature_df.values())
                 std_deviation = math.sqrt(sum((x - mean) ** 2 for x in feature_df.values()) / len(feature_df.values()))
                 norm_df[feature_ele] = (feature_df[feature_ele] - mean) / std_deviation
             return norm_df
