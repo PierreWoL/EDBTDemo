@@ -2,25 +2,28 @@ import pandas as pd
 import TableMiner.LearningPhase.Learning as learn
 from TableMiner.SearchOntology import SearchOntology
 from TableMiner.Utils import stabilized, def_bow
-
-
-# from TableMiner.SCDection.TableAnnotation import TableColumnAnnotation as TA
+from TableMiner.SCDection.TableAnnotation import TableColumnAnnotation as TA
 
 
 class TableLearning:
     def __init__(self, table: pd.DataFrame, KB="DBPedia"):
         self._table = table
         self._annotation_classes = {}
-        # self._NE_Column = TA(table).subcol_Tjs()
+        self._NE_Column = {}
         # self._NE_Column = {0: 3.662611942715209, 3: 1.7804230716137477, 4: 1.5887996947126874, 5: 1.4407044164353653} # this is 125
-        self._NE_Column = {1: 3.662611942715209, 2: 1.7804230716137477}  # , 3: 1.5887996947126874
         self._domain_representation = {}
-        #print(self._NE_Column)
+        # print(self._NE_Column)
         self.kb = KB
         self._onto = SearchOntology(kb=KB)
 
     def get_annotation_class(self):
         return self._annotation_classes
+
+    def update_NE_Column(self, NE_Column: dict = None):
+        if NE_Column is None:
+            self._NE_Column = TA(self._table).subcol_Tjs()
+        else:
+            self._NE_Column = NE_Column
 
     def update_annotation_class(self, column_index, new_learning: learn):
         self._annotation_classes[column_index] = new_learning
@@ -82,7 +85,8 @@ def table_stablized(currentLearnings, previousLearnings=None):
             previous_entities = previousLearning_index.get_Entities()
             concepts = currentLearning_index.get_winning_concepts()
             previous_concepts = previousLearning_index.get_winning_concepts()
-            if stabilized(winning_entities, previous_entities) is True and stabilized(concepts, previous_concepts) is True:
+            if stabilized(winning_entities, previous_entities) is True and stabilized(concepts,
+                                                                                      previous_concepts) is True:
                 stablizedTrigger = True
             else:
                 stablizedTrigger = False

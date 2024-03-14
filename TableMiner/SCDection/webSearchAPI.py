@@ -1,26 +1,10 @@
 from googleapiclient.discovery import (build)
 
 
-'''
-This is too slow
-for j in search(query, tld="co.in", num=2, stop=2, pause=0.1):
-    print(j)
-
-    reqs = requests.get(j)
-    soup = BeautifulSoup(reqs.text, 'html.parser')
-    # soup = BeautifulSoup((urlopen(j)))
-    # print("Title of the website is: ", soup.title.get_text())
-    print(soup.findAll("title"))
-    for title in soup.findAll("title"):
-        print(title.get_text())
-
-
-'''
-
 
 class WebSearch:
 
-    def __init__(self, cse_id =""):  # , api_key, cse_id
+    def __init__(self, cse_id ="c08f6c0abe4964877"):  # , api_key, cse_id AIzaSyCt2afoIIv1hJxYp_V0mAf4ZzZtYPrCUss
         """
         Init: connect with Google custom search api
         Parameters api
@@ -29,7 +13,7 @@ class WebSearch:
         cse_id: id of user's custom search
         """
         try:
-            self.my_api_key = ""
+            self.my_api_key = "AIzaSyBogbAxNrr0c39ChcCTHliSBiMHVSQ7mog"
             self.my_cse_id = cse_id
             self.service = build("customsearch", "v1", developerKey=self.my_api_key)
             self.res = []
