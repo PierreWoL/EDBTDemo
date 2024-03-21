@@ -6,6 +6,8 @@ from sklearn.metrics import silhouette_score
 from collections import Counter
 import pandas as pd
 
+from d3l.input_output.dataloaders import CSVDataLoader
+
 current_file_path = os.path.abspath(__file__)
 current_dir_path = os.path.dirname(current_file_path)
 
@@ -62,14 +64,13 @@ def dbscan_param_search(input_data):
 def KMeans_param_search(input_data, cluster_num_min, cluster_num_max):
     score = -1
     best_model = KMeans()
-    for i in range(cluster_num_min, cluster_num_max, 1 ):
+    for i in range(cluster_num_min, cluster_num_max, 1):
         kmeans = KMeans(n_clusters=i, init='k-means++', max_iter=300, n_init='auto', random_state=0)
         kmeans.fit(input_data)
         labels = kmeans.labels_
         if score <= silhouette_score(input_data, labels):
             score = silhouette_score(input_data, labels)
             best_model = kmeans
-    print(best_model.n_clusters, score)
     return best_model, best_model.labels_
 
 
@@ -85,7 +86,7 @@ def AgglomerativeClustering_param_search(input_data, cluster_num_min, cluster_nu
         if score <= silhouette_score(input_data, labels):
             score = silhouette_score(input_data, labels)
             best_model = agg_clustering
-    print(best_model.n_clusters, score)
+    #print(best_model.n_clusters, score)
     return best_model, best_model.labels_
 
 
@@ -124,25 +125,62 @@ def clustering(input_data, data_names, number_estimate, clustering_method):
     return cluster_dict
 
 
-def result_precision(clustering_dict: dict, isStrict=True):
+def check_label_of_table(table_name, isStrict=True):
     gt = pd.read_csv(os.path.join(current_dir_path, "groundTruth.csv"))
+    if isStrict is True:
+        class_table = gt[gt['fileName'] == table_name].iloc[0, 2]
+    else:
+        class_table = gt[gt['fileName'] == table_name].iloc[0, 3]
+    return class_table
+
+
+def inner_cluster(tables: list):
+    inner_info = []
+    inner_info.extend([(table, check_label_of_table(table)) for table in tables])
+    table_info = pd.DataFrame(inner_info, columns=["table name", "GT label"]).sort_values(by='GT label',
+                                                                                          ascending=False)
+    return table_info
+
+
+def check_column(Dataloader: CSVDataLoader, combined_column_name):
+    table_name, column_name = combined_column_name.split(".")
+    table = Dataloader.read_table(table_name)
+    return table[column_name]
+
+
+def sample_tables_cluster(cluster_inner_gt: pd.DataFrame, selected_gt=None):
+    result = None
+    if selected_gt is not None:
+        first_row = cluster_inner_gt[cluster_inner_gt["GT label"] == selected_gt].sample(n=1)
+    else:
+        first_row = cluster_inner_gt.sample(n=1)
+    gt_first_row = first_row["GT label"].iloc[0]
+    filtered_df = cluster_inner_gt[cluster_inner_gt["GT label"] != gt_first_row]
+    if not filtered_df.empty:
+        second_row = filtered_df.sample(n=1)
+        result = pd.concat([first_row, second_row])
+    return result
+
+
+def result_precision(clustering_dict: dict, isStrict=True):
+    summarization = []
     for cluster_id, tables in clustering_dict.items():
         class_tables = []
         for table in tables:
-            if isStrict is True:
-                class_table = gt[gt['fileName'] == table].iloc[0, 2]
-            else:
-                class_table = gt[gt['fileName'] == table].iloc[0, 3]
-            class_tables.append(class_table)
+            class_tables.append(check_label_of_table(table, isStrict=isStrict))
         cluster_label, highest_frequency = find_most_frequent_elements(class_tables)
         precision = 1 - len([i for i in class_tables if i not in cluster_label]) / len(class_tables)
         if len(cluster_label) == 1:
             cluster_label = cluster_label[0]
-        print(cluster_id, cluster_label, precision)
+        summarization.append((cluster_id, cluster_label, f"{precision:.3f}", len(tables)))
+    table_summarization = pd.DataFrame(summarization,
+                                       columns=["cluster id", "label",
+                                                "precision", "size"]). \
+        sort_values(by='precision', ascending=False)
+    return table_summarization
 
 
 def typeInference(embedding_file_path, clustering_method="Agglomerative", numEstimate=0):
-    dict_file = {}
     F = open(embedding_file_path, 'rb')
     content = pickle.load(F)
     Z = []
@@ -156,6 +194,7 @@ def typeInference(embedding_file_path, clustering_method="Agglomerative", numEst
     Z = np.array(Z)
     cluster_dict = clustering(Z, T, number_estimate=numEstimate, clustering_method=clustering_method)
     return cluster_dict
+
 
 def conceptualAttri(dataset_path: str, embedding_file_path: str, clustering_method="KMeans", domain="VideoGame",
                     numEstimate=0):
@@ -176,5 +215,6 @@ def conceptualAttri(dataset_path: str, embedding_file_path: str, clustering_meth
     cluster_dict = clustering(Z, T, number_estimate=numEstimate, clustering_method=clustering_method)
     cluster_dict = dict(sorted(cluster_dict.items()))
     return cluster_dict
+
 
 

@@ -8,7 +8,7 @@ import TableMiner.Utils as util
 
 
 class TableColumnAnnotation:
-    def __init__(self, table: pd.DataFrame): #, cse_id="c08f6c0abe4964877"
+    def __init__(self, table: pd.DataFrame):
 
         if isinstance(table, pd.DataFrame) is False:
             print("input should be dataframe!")
