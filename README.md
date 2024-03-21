@@ -45,14 +45,14 @@ to ensure proper setup. Once installed, they can be used as intended.
 Engine, you can build your own engine via [Here](https://programmablesearchengine.google.com/intl/en_uk/about/).
 After setting the engine, in webSearchAPI.py, **cse_id** and **my_api_key** are needed to be changed.
 
-```bash
-pip install -r requirements
-```
 
 Ensure you have the following installed:
 - Python 3.7+ (Better to use Python 3.11)
 - Jupyter Notebook
 ### Installation
+```bash
+pip install -r requirements
+```
 
 Clone the repository to your local machine:
 ```bash
