@@ -6,15 +6,14 @@ from TableMiner.SCDection.TableAnnotation import TableColumnAnnotation as TA
 
 
 class TableLearning:
-    def __init__(self, table: pd.DataFrame, KB="DBPedia"):
+    def __init__(self, table: pd.DataFrame, KB="DBPedia", NE_column: dict = None):
         self._table = table
         self._annotation_classes = {}
         self._NE_Column = {}
-        # self._NE_Column = {0: 3.662611942715209, 3: 1.7804230716137477, 4: 1.5887996947126874, 5: 1.4407044164353653} # this is 125
         self._domain_representation = {}
-        # print(self._NE_Column)
         self.kb = KB
         self._onto = SearchOntology(kb=KB)
+        self.update_NE_Column(NE_Column=NE_column)
 
     def get_annotation_class(self):
         return self._annotation_classes
@@ -35,6 +34,9 @@ class TableLearning:
         return self._NE_Column
 
     def table_learning(self):
+        """
+        Learning phase of Table Miner+
+        """
         for column_index in self._NE_Column.keys():
             learning = learn.Learning(self._table, kb=self.kb)
             ne_column = self._table.columns[column_index]
@@ -43,6 +45,9 @@ class TableLearning:
             self._annotation_classes[column_index] = learning
 
     def domain_bow(self):
+        """
+        return the bows of table's domain set
+        """
         winning_entities_definitions = set()
         for column_index, learning in self._annotation_classes.items():
             for entity, ids in learning.get_winning_entitiesId().items():
@@ -55,6 +60,9 @@ class TableLearning:
 
 
 def updatePhase(currentLearnings: TableLearning):
+    """
+    Update phase of tableMiner+
+    """
     table = currentLearnings.get_table()
     print("Starting update")
     previousLearnings = None
@@ -65,7 +73,7 @@ def updatePhase(currentLearnings: TableLearning):
         for column_index in currentLearnings.get_annotation_class().keys():
             learning = currentLearnings.get_annotation_class()[column_index]
             concepts = learning.get_winning_concepts()
-            print(f" iteration {i} column_index {column_index} concepts {concepts}")
+            # print(f" iteration {i} column_index {column_index} concepts {concepts}")
             for concept in concepts:
                 learning.update_conceptScores(concept, table.columns[column_index], bow_domain)
             learning.preliminaryCellDisambiguation()

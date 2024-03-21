@@ -11,7 +11,6 @@ import random
 import statistics
 from d3l.utils.constants import STOPWORDS
 from nltk.stem import WordNetLemmatizer
-import TableMiner.SCDection.experimentalData as ed
 
 """
 This combines the features to detection subject columns of tables
@@ -101,7 +100,7 @@ class ColumnDetection:
                 if temp_count_text_cell != 0:
                     ave_token_number = total_token_number / temp_count_text_cell
                     # TODO : I think this needs further modification later Currently set to 10 just in case
-                    if ave_token_number > 50:
+                    if ave_token_number > 15:
                         type_count[ColumnType.long_text.value] = temp_count_text_cell
                     else:
                         type_count[ColumnType.named_entity.value] = type_count[ColumnType.named_entity.value] + \
@@ -131,7 +130,6 @@ class ColumnDetection:
                 # print(token, token_with_number)
                 if len(element.split(" ")) == 1:
                     # Judge if it is a null value
-                    # TODO : need to mark this empty cell and calculate how many empty cells exist
                     if func.is_number(element):
                         # There exists special cases: where year could be recognized as number
                         type_count[ColumnType.number.value] += 1
@@ -392,7 +390,19 @@ def random_table(tables: dict):
 
 
 def test_subject_column(filename):
-    files = ed.get_files(filename)
+    def get_files(data_path):
+        T = []
+        if data_path.endswith('.csv'):
+            features = pd.read_csv(data_path)
+            T = features.iloc[:, 0]
+        else:
+            T = os.listdir(data_path)
+            T = [t[:-4] for t in T if t.endswith('.csv')]
+            T.sort()
+
+        return (T)
+
+    files =  get_files(filename)
     for file in files:
         f = open(filename + file + '.csv', errors='ignore')
         table = pd.read_csv(f)

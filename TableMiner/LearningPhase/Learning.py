@@ -1,6 +1,5 @@
 import math
 from math import sqrt
-# from time import sleep
 import pandas as pd
 from TableMiner.Utils import I_inf
 import TableMiner.LearningPhase.SamplingRanking as Ranking
@@ -14,7 +13,6 @@ class Learning:
         self._dataframe = dataframe
         self._column = None
         self._winning_entities_dict = {}
-        # cell_index: winning entity
         self._rowEntities = {}
         self._conceptScores = {}
         self._onto = So.SearchOntology(kb=kb)
@@ -52,7 +50,7 @@ class Learning:
     def get_dataframe(self):
         return self._dataframe
 
-    def get_column(self, column_name):
+    def get_column_with_name(self, column_name):
         if column_name not in self._dataframe.columns:
             raise ValueError("column not exists!")
         else:
@@ -230,9 +228,9 @@ class Learning:
         # Placeholder: Replace with actual lookup
         concepts_entity = []
         if entity is None:
-            print("Invalid winning entity!")
+            #print("Invalid winning entity!")
+            return []
         if entity is not None:
-
             # for time in range(3):
             concepts_entity = self._onto.findConcepts(entity)
             """
@@ -295,7 +293,8 @@ class Learning:
             # start_time = time.perf_counter()
             concepts_entity = self.candidateConceptGeneration(winning_entity)
             # end_time = time.perf_counter()
-            # print(f"existing cell {cell} candidateConceptGeneration time {end_time - start_time} second concepts_entity {concepts_entity}")
+            # print(f"existing cell {cell} candidateConceptGeneration time
+            # {end_time - start_time} second concepts_entity {concepts_entity}")
             # if len(concepts_entity) == 0:
             # print("The cell and the entity ", cell, index, winning_entity)
             if concepts_entity:
@@ -314,7 +313,7 @@ class Learning:
         return current_pairs
 
     def preliminaryColumnClassification(self, column_name):
-        column = self.get_column(column_name)
+        column = self.get_column_with_name(column_name)
         # print(column)
         conceptScores = {}
         self._conceptScores = I_inf(column,
@@ -330,6 +329,5 @@ class Learning:
             self._conceptScores = self.updateCandidateConcepts(self._conceptScores, concept_pairs)
         end_time = time.perf_counter()
         print(f"preliminaryCellDisambiguation time: {end_time - start_time} sec \n")
-
         # print("The column entities ", pd.Series(self._rowEntities))
         return pd.Series(self._rowEntities)

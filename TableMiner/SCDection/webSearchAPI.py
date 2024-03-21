@@ -1,10 +1,9 @@
 from googleapiclient.discovery import (build)
 
 
-
 class WebSearch:
 
-    def __init__(self, cse_id ="c08f6c0abe4964877"):  # , api_key, cse_id AIzaSyCt2afoIIv1hJxYp_V0mAf4ZzZtYPrCUss
+    def __init__(self, cse_id=""):  # , api_key, cse_id AIzaSyCt2afoIIv1hJxYp_V0mAf4ZzZtYPrCUss
         """
         Init: connect with Google custom search api
         Parameters api
@@ -13,7 +12,7 @@ class WebSearch:
         cse_id: id of user's custom search
         """
         try:
-            self.my_api_key = "AIzaSyBogbAxNrr0c39ChcCTHliSBiMHVSQ7mog"
+            self.my_api_key = ""
             self.my_cse_id = cse_id
             self.service = build("customsearch", "v1", developerKey=self.my_api_key)
             self.res = []
@@ -21,7 +20,7 @@ class WebSearch:
         except ValueError:
             pass
 
-    def search_result(self, search_term: str, top_n: int, **kwargs) :
+    def search_result(self, search_term: str, top_n: int, **kwargs):
         """
         crawl the top n results of searched item
         Parameters
@@ -54,7 +53,7 @@ class WebSearch:
         if 'items' in dict(other_res).keys():
             self.res = self.res + other_res['items']
         for res in self.res:
-            content = {'title':"", "snippet":""}
+            content = {'title': "", "snippet": ""}
             if "title" in res.keys():
                 content["title"] = res["title"]
             if "snippet" in res.keys():
@@ -69,6 +68,3 @@ results = web_search.search_result(query, 5)
 for result in results:
     # pprint.pprint(result)
     print(result["title"], result["snippet"])"""
-
-
-
