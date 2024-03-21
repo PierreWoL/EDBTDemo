@@ -6,8 +6,6 @@ from nltk.tokenize import word_tokenize
 import math
 from datetime import datetime
 import re
-import os
-import pickle
 import string
 from dateutil.parser import parse
 import pandas as pd

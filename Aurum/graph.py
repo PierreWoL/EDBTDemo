@@ -1,16 +1,11 @@
 import pickle
 import os
-
-import pandas as pd
-
-from d3l.indexing.similarity_indexes import NameIndex, ValueIndex
 from d3l.input_output.dataloaders import CSVDataLoader
 import networkx as nx
 from d3l.querying.query_engine import QueryEngine
 import plotly.graph_objs as go
 import plotly.offline as pyo
 
-from d3l.utils.functions import unpickle_python_object, pickle_python_object
 
 
 def average_score(Neighbour_score, threshold=0.5):
