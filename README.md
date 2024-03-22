@@ -27,7 +27,7 @@ this repository includes the following frameworks, or parts of them:
 
 
 
-**NOTE:Semprop[5] is the currently implemented core function of Aurum. Our version is the simplified version
+**NOTE:SEMPROP[5] is the currently implemented core function of Aurum. Our version is the simplified version
 based on the description in Aurum [2].**
 
 [1] A. Bogatu, A. A. A. Fernandes, N. W. Paton and N. Konstantinou, "Dataset Discovery in Data Lakes," 
@@ -93,17 +93,6 @@ unzip Datasets.zip
 ```
 ## Copyright and License Notice
 This project incorporates data used under the **Apache License 2.0**. We respect all original data copyrights and license requirements and share our work on this basis.
-
-## Dataset Overview
-This project utilizes structured data derived from the Web Data Commons project, focusing on:
-
-- **T2Dv2 Gold Standard for Matching Web Tables to DBpedia**: 108 tables from 9 entity classes. [Access here](https://webdatacommons.org/webtables/goldstandardV2.html).
-- **Schema.org Table Corpus 2023**: 92 tables from 8 entity classes. [Access here](https://webdatacommons.org/structureddata/schemaorgtables/2023/index.html#toc3).
-
-### Usage Guidelines
-
-Datasets are not hosted directly due to licensing. Users are encouraged to download the data via the provided links and follow the project's scripts for processing.
-
 
 ## Citation
 If you are using the code in this repo, please cite the following in your work:
