@@ -51,8 +51,8 @@ if __name__ == '__main__':
         torch.cuda.manual_seed_all(seed)
 
     # Change the data paths to where the benchmarks are stored
-    path = os.path.join(os.path.dirname(os.getcwd()),f"{hp.task}")
-    # trainset = PretrainTableDataset(path,
+   
+    # trainset = PretrainTableDataset(hp.dataset,
     #                      augment_op=hp.augment_op,
     #                      lm=hp.lm,
     #                      max_len=hp.max_len,
