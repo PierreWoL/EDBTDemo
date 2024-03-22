@@ -1,10 +1,18 @@
 # Dataset Discovery and Exploration: State-of-the-art, Challenges, and Opportunities
 
 
+
 This repository contains the Python Notebooks
 which illustrate the techniques and strategies discussed in the tutorial named
 "Dataset Discovery and Exploration: State-of-the-art, Challenges, and Opportunities," 
 set to be presented at EDBT 2024. The tutorial examines four key functionalities of dataset discovery and exploration:
+
+This repository hosts the Python Notebooks that bring to life the methodologies and 
+approaches covered in the tutorial titled 
+"Dataset Discovery and Exploration: State-of-the-art, Challenges, and Opportunities,"
+scheduled for presentation at EDBT 2024.
+The 4 dataset discovery and exploration functionalities reviewed in the tutorial are:
+
 - **Dataset Discovery.**
 - **Dataset Navigation.**
 - **Dataset Annotation.**
@@ -17,7 +25,9 @@ this repository includes the following frameworks, or parts of them:
 - **TableMiner+ [3] - Dataset Annotation.**
 - **Starmie [4] - Schema Inference.**
 
-**NOTE: SEMPROP[5] is the currently implemented core function of Aurum. Our version is the simplified version
+
+
+**NOTE:Semprop[5] is the currently implemented core function of Aurum. Our version is the simplified version
 based on the description in Aurum [2].**
 
 [1] A. Bogatu, A. A. A. Fernandes, N. W. Paton and N. Konstantinou, "Dataset Discovery in Data Lakes," 
@@ -48,6 +58,7 @@ Modifications are applied to the Schema.org Table Corpus data, which include:
 The datasets have been uploaded to this project as `Datasets.zip`. Simply extract this file in the current folder to access the data.
 
 
+
 ## Prerequisites
 ### Requirements (follows the requirement of all included framework)
 - **Python 3.7.10 or higher.**
@@ -58,18 +69,16 @@ please directly download the GitHub repositories pointed to by the submodules.
 Follow the installation instructions provided in those repositories 
 to ensure proper setup. Once installed, they can be used as intended.
 
-**Subject Column Detection in TableMiner+**: In the section needs to use the Google api for Google Custom Search
-Engine, you can build your own engine via [Here](https://programmablesearchengine.google.com/intl/en_uk/about/). After setting the engine, in webSearchAPI.py, **cse_id** and **my_api_key** are needed to be changed.
-
+**Subject Column Detection in TableMiner+**: This section needs to use the Google api for Google Custom Search
+Engine, you can build your own engine via [Here](https://programmablesearchengine.google.com/intl/en_uk/about/). After setting the engine, in webSearchAPI.py, **cse_id** and **my_api_key** are needed to be changed.  
 Currently, we use the parameter **SearchingWeb** 
 TableColumnAnnotation class in TableAnnotation.py to disable the web search function in the Notebook.
-
-
 
 Ensure you have the following installed:
 - Python 3.7+ (Better to use Python 3.11)
 - Jupyter Notebook
 ### Installation
+
 Clone the repository to your local machine:
 ```bash
 git clone https://github.com/PierreWoL/EDBTDemo
@@ -84,6 +93,17 @@ unzip Datasets.zip
 ```
 ## Copyright and License Notice
 This project incorporates data used under the **Apache License 2.0**. We respect all original data copyrights and license requirements and share our work on this basis.
+
+## Dataset Overview
+This project utilizes structured data derived from the Web Data Commons project, focusing on:
+
+- **T2Dv2 Gold Standard for Matching Web Tables to DBpedia**: 108 tables from 9 entity classes. [Access here](https://webdatacommons.org/webtables/goldstandardV2.html).
+- **Schema.org Table Corpus 2023**: 92 tables from 8 entity classes. [Access here](https://webdatacommons.org/structureddata/schemaorgtables/2023/index.html#toc3).
+
+### Usage Guidelines
+
+Datasets are not hosted directly due to licensing. Users are encouraged to download the data via the provided links and follow the project's scripts for processing.
+
 
 ## Citation
 If you are using the code in this repo, please cite the following in your work:

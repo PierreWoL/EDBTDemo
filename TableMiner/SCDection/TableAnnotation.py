@@ -8,6 +8,7 @@ import TableMiner.Utils as util
 
 
 class TableColumnAnnotation:
+
     def __init__(self, table: pd.DataFrame, SearchingWeb=False):
 
         if isinstance(table, pd.DataFrame) is False:
@@ -20,6 +21,7 @@ class TableColumnAnnotation:
         self.search = Search.WebSearch()
         self.column_score = {}
         self.isWeb = SearchingWeb
+
 
     def annotate_type(self):
         """
@@ -61,7 +63,7 @@ class TableColumnAnnotation:
             # self.column_score[i] = 0
 
     @staticmethod
-    def update_ws(current_state, new_pairs, **kwargs):
+    def update_ws(current_state, new_pairs,**kwargs):
         for cell, cell_score in new_pairs.items():
             current_state[cell] = cell_score
         return current_state
@@ -77,9 +79,8 @@ class TableColumnAnnotation:
         # P (webpages) in the paper
         results = self.search.search_result(input_query, top_K)
         sleep(2)
-
         cell = self.table.iloc[index, column_index]
-        if isinstance(cell, float):
+        if isinstance(cell,float):
             cell_ws_score = 0
         else:
             cell_ws_score = self.countp(cell, results) + self.countw(cell, results)
@@ -126,7 +127,6 @@ class TableColumnAnnotation:
                 std_deviation = math.sqrt(sum((x - mean) ** 2 for x in feature_df.values()) / len(feature_df.values()))
                 norm_df[feature_ele] = (feature_df[feature_ele] - mean) / std_deviation
             return norm_df
-
         self.ws_cal(top_n=3)
         for i, candidate_type in self.annotation.items():
             if candidate_type == SCD.ColumnType.named_entity:
