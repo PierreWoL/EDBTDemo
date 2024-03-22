@@ -1,0 +1,201 @@
+,fileName,class,superclass
+0,T2DV2_193.csv,Airport,['Place']
+1,T2DV2_239.csv,Airport,['Place']
+2,T2DV2_259.csv,Airport,['Place']
+3,T2DV2_31.csv,Airport,['Place']
+4,T2DV2_39.csv,Airport,['Place']
+5,T2DV2_66.csv,Airport,['Place']
+6,T2DV2_77.csv,Airport,['Place']
+7,Test_corpus_102.csv,Airport,['Place']
+8,Test_corpus_105.csv,Airport,['Place']
+9,Test_corpus_113.csv,Airport,['Place']
+10,Test_corpus_116.csv,Airport,['Place']
+11,Test_corpus_127.csv,Airport,['Place']
+12,Test_corpus_145.csv,Airport,['Place']
+13,Test_corpus_146.csv,Airport,['Place']
+14,Test_corpus_37.csv,Airport,['Place']
+15,Test_corpus_48.csv,Airport,['Place']
+16,T2DV2_112.csv,City,['Place']
+17,T2DV2_165.csv,City,['Place']
+18,T2DV2_168.csv,City,['Place']
+19,T2DV2_183.csv,City,['Place']
+20,T2DV2_240.csv,City,['Place']
+21,T2DV2_70.csv,City,['Place']
+22,T2DV2_84.csv,City,['Place']
+23,Test_corpus_103.csv,City,['Place']
+24,Test_corpus_106.csv,City,['Place']
+25,Test_corpus_114.csv,City,['Place']
+26,Test_corpus_123.csv,City,['Place']
+27,Test_corpus_148.csv,City,['Place']
+28,Test_corpus_15.csv,City,['Place']
+29,Test_corpus_85.csv,City,['Place']
+30,Test_corpus_92.csv,City,['Place']
+31,T2DV2_101.csv,City,['Place']
+32,Test_corpus_108.csv,CollegeOrUniversity,"['Place', 'Organization']"
+33,Test_corpus_129.csv,CollegeOrUniversity,"['Place', 'Organization']"
+34,Test_corpus_16.csv,CollegeOrUniversity,"['Place', 'Organization']"
+35,Test_corpus_26.csv,CollegeOrUniversity,"['Place', 'Organization']"
+36,Test_corpus_27.csv,CollegeOrUniversity,"['Place', 'Organization']"
+37,Test_corpus_30.csv,CollegeOrUniversity,"['Place', 'Organization']"
+38,Test_corpus_32.csv,CollegeOrUniversity,"['Place', 'Organization']"
+39,Test_corpus_34.csv,CollegeOrUniversity,"['Place', 'Organization']"
+40,Test_corpus_39.csv,CollegeOrUniversity,"['Place', 'Organization']"
+41,Test_corpus_4.csv,CollegeOrUniversity,"['Place', 'Organization']"
+42,Test_corpus_40.csv,CollegeOrUniversity,"['Place', 'Organization']"
+43,Test_corpus_42.csv,CollegeOrUniversity,"['Place', 'Organization']"
+44,Test_corpus_69.csv,CollegeOrUniversity,"['Place', 'Organization']"
+45,Test_corpus_72.csv,CollegeOrUniversity,"['Place', 'Organization']"
+46,Test_corpus_74.csv,CollegeOrUniversity,"['Place', 'Organization']"
+47,Test_corpus_76.csv,CollegeOrUniversity,"['Place', 'Organization']"
+48,Test_corpus_83.csv,CollegeOrUniversity,"['Place', 'Organization']"
+49,Test_corpus_86.csv,CollegeOrUniversity,"['Place', 'Organization']"
+50,Test_corpus_91.csv,CollegeOrUniversity,"['Place', 'Organization']"
+51,Test_corpus_95.csv,CollegeOrUniversity,"['Place', 'Organization']"
+52,T2DV2_134.csv,Company,"['Place', 'Organization']"
+53,T2DV2_136.csv,Company,"['Place', 'Organization']"
+54,T2DV2_146.csv,Company,"['Place', 'Organization']"
+55,T2DV2_17.csv,Company,"['Place', 'Organization']"
+56,T2DV2_205.csv,Company,"['Place', 'Organization']"
+57,T2DV2_214.csv,Company,"['Place', 'Organization']"
+58,T2DV2_22.csv,Company,"['Place', 'Organization']"
+59,T2DV2_246.csv,Company,"['Place', 'Organization']"
+60,T2DV2_249.csv,Company,"['Place', 'Organization']"
+61,T2DV2_25.csv,Company,"['Place', 'Organization']"
+62,T2DV2_46.csv,Company,"['Place', 'Organization']"
+63,T2DV2_47.csv,Company,"['Place', 'Organization']"
+64,T2DV2_50.csv,Company,"['Place', 'Organization']"
+65,T2DV2_51.csv,Company,"['Place', 'Organization']"
+66,T2DV2_55.csv,Company,"['Place', 'Organization']"
+67,T2DV2_76.csv,Company,"['Place', 'Organization']"
+68,T2DV2_81.csv,Company,"['Place', 'Organization']"
+69,Test_corpus_115.csv,Continent,['Place']
+70,Test_corpus_151.csv,Continent,['Place']
+71,Test_corpus_90.csv,Continent,['Place']
+72,T2DV2_106.csv,Country,['Place']
+73,T2DV2_114.csv,Country,['Place']
+74,T2DV2_117.csv,Country,['Place']
+75,T2DV2_12.csv,Country,['Place']
+76,T2DV2_125.csv,Country,['Place']
+77,T2DV2_142.csv,Country,['Place']
+78,T2DV2_148.csv,Country,['Place']
+79,T2DV2_151.csv,Country,['Place']
+80,T2DV2_155.csv,Country,['Place']
+81,T2DV2_171.csv,Country,['Place']
+82,T2DV2_178.csv,Country,['Place']
+83,T2DV2_180.csv,Country,['Place']
+84,T2DV2_196.csv,Country,['Place']
+85,T2DV2_201.csv,Country,['Place']
+86,T2DV2_203.csv,Country,['Place']
+87,Test_corpus_75.csv,Country,['Place']
+88,T2DV2_172.csv,Hospital,"['Place', 'Organization']"
+89,T2DV2_189.csv,Hospital,"['Place', 'Organization']"
+90,T2DV2_191.csv,Hospital,"['Place', 'Organization']"
+91,T2DV2_222.csv,Hospital,"['Place', 'Organization']"
+92,T2DV2_223.csv,Hospital,"['Place', 'Organization']"
+93,T2DV2_229.csv,Hospital,"['Place', 'Organization']"
+94,T2DV2_234.csv,Hospital,"['Place', 'Organization']"
+95,T2DV2_79.csv,Hospital,"['Place', 'Organization']"
+96,Test_corpus_1.csv,Hospital,"['Place', 'Organization']"
+97,Test_corpus_112.csv,Hospital,"['Place', 'Organization']"
+98,Test_corpus_121.csv,Hospital,"['Place', 'Organization']"
+99,Test_corpus_79.csv,Hospital,"['Place', 'Organization']"
+100,Test_corpus_14.csv,Hospital,"['Place', 'Organization']"
+101,Test_corpus_89.csv,Hospital,"['Place', 'Organization']"
+102,Test_corpus_143.csv,Hospital,"['Place', 'Organization']"
+103,Test_corpus_150.csv,Hospital,"['Place', 'Organization']"
+104,Test_corpus_35.csv,Hospital,"['Place', 'Organization']"
+105,Test_corpus_49.csv,Hospital,"['Place', 'Organization']"
+106,Test_corpus_58.csv,Hospital,"['Place', 'Organization']"
+107,Test_corpus_60.csv,Hospital,"['Place', 'Organization']"
+108,Test_corpus_7.csv,Hospital,"['Place', 'Organization']"
+109,Test_corpus_70.csv,Hospital,"['Place', 'Organization']"
+110,Test_corpus_99.csv,Hospital,"['Place', 'Organization']"
+111,Test_corpus_11.csv,LandmarksOrHistoricalBuildings,['Place']
+112,Test_corpus_12.csv,LandmarksOrHistoricalBuildings,['Place']
+113,Test_corpus_122.csv,LandmarksOrHistoricalBuildings,['Place']
+114,Test_corpus_135.csv,LandmarksOrHistoricalBuildings,['Place']
+115,Test_corpus_136.csv,LandmarksOrHistoricalBuildings,['Place']
+116,Test_corpus_147.csv,LandmarksOrHistoricalBuildings,['Place']
+117,Test_corpus_153.csv,LandmarksOrHistoricalBuildings,['Place']
+118,Test_corpus_2.csv,LandmarksOrHistoricalBuildings,['Place']
+119,Test_corpus_29.csv,LandmarksOrHistoricalBuildings,['Place']
+120,Test_corpus_45.csv,LandmarksOrHistoricalBuildings,['Place']
+121,Test_corpus_51.csv,LandmarksOrHistoricalBuildings,['Place']
+122,Test_corpus_59.csv,LandmarksOrHistoricalBuildings,['Place']
+123,Test_corpus_63.csv,LandmarksOrHistoricalBuildings,['Place']
+124,Test_corpus_65.csv,LandmarksOrHistoricalBuildings,['Place']
+125,Test_corpus_66.csv,LandmarksOrHistoricalBuildings,['Place']
+126,Test_corpus_8.csv,LandmarksOrHistoricalBuildings,['Place']
+127,T2DV2_138.csv,Monarch,['Person']
+128,T2DV2_154.csv,Monarch,['Person']
+129,T2DV2_186.csv,Monarch,['Person']
+130,T2DV2_226.csv,Monarch,['Person']
+131,T2DV2_227.csv,Monarch,['Person']
+132,T2DV2_260.csv,Monarch,['Person']
+133,T2DV2_30.csv,Monarch,['Person']
+134,T2DV2_59.csv,Monarch,['Person']
+135,T2DV2_78.csv,Monarch,['Person']
+136,T2DV2_1.csv,Movie,['CreativeWork']
+137,T2DV2_100.csv,Movie,['CreativeWork']
+138,T2DV2_133.csv,Movie,['CreativeWork']
+139,T2DV2_137.csv,Movie,['CreativeWork']
+140,T2DV2_162.csv,Movie,['CreativeWork']
+141,T2DV2_164.csv,Movie,['CreativeWork']
+142,T2DV2_187.csv,Movie,['CreativeWork']
+143,T2DV2_19.csv,Movie,['CreativeWork']
+144,T2DV2_21.csv,Movie,['CreativeWork']
+145,T2DV2_217.csv,Movie,['CreativeWork']
+146,T2DV2_230.csv,Movie,['CreativeWork']
+147,T2DV2_235.csv,Movie,['CreativeWork']
+148,T2DV2_254.csv,Movie,['CreativeWork']
+149,T2DV2_26.csv,Movie,['CreativeWork']
+150,T2DV2_33.csv,Movie,['CreativeWork']
+151,T2DV2_75.csv,Movie,['CreativeWork']
+152,Test_corpus_0.csv,Museum,['Place']
+153,Test_corpus_101.csv,Museum,['Place']
+154,Test_corpus_118.csv,Museum,['Place']
+155,Test_corpus_120.csv,Museum,['Place']
+156,Test_corpus_124.csv,Museum,['Place']
+157,Test_corpus_125.csv,Museum,['Place']
+158,Test_corpus_13.csv,Museum,['Place']
+159,Test_corpus_132.csv,Museum,['Place']
+160,Test_corpus_141.csv,Museum,['Place']
+161,Test_corpus_144.csv,Museum,['Place']
+162,Test_corpus_149.csv,Museum,['Place']
+163,Test_corpus_152.csv,Museum,['Place']
+164,Test_corpus_154.csv,Museum,['Place']
+165,Test_corpus_18.csv,Museum,['Place']
+166,Test_corpus_20.csv,Museum,['Place']
+167,Test_corpus_24.csv,Museum,['Place']
+168,Test_corpus_3.csv,Museum,['Place']
+169,Test_corpus_43.csv,Museum,['Place']
+170,Test_corpus_44.csv,Museum,['Place']
+171,Test_corpus_5.csv,Museum,['Place']
+172,T2DV2_109.csv,Scientist,['Person']
+173,T2DV2_131.csv,Scientist,['Person']
+174,T2DV2_156.csv,Scientist,['Person']
+175,T2DV2_159.csv,Scientist,['Person']
+176,T2DV2_169.csv,Scientist,['Person']
+177,T2DV2_202.csv,Scientist,['Person']
+178,T2DV2_34.csv,Scientist,['Person']
+179,T2DV2_38.csv,Scientist,['Person']
+180,T2DV2_60.csv,Scientist,['Person']
+181,T2DV2_111.csv,VideoGame,['CreativeWork']
+182,T2DV2_121.csv,VideoGame,['CreativeWork']
+183,T2DV2_122.csv,VideoGame,['CreativeWork']
+184,T2DV2_129.csv,VideoGame,['CreativeWork']
+185,T2DV2_130.csv,VideoGame,['CreativeWork']
+186,T2DV2_145.csv,VideoGame,['CreativeWork']
+187,T2DV2_147.csv,VideoGame,['CreativeWork']
+188,T2DV2_150.csv,VideoGame,['CreativeWork']
+189,T2DV2_152.csv,VideoGame,['CreativeWork']
+190,T2DV2_163.csv,VideoGame,['CreativeWork']
+191,T2DV2_184.csv,VideoGame,['CreativeWork']
+192,T2DV2_20.csv,VideoGame,['CreativeWork']
+193,T2DV2_209.csv,VideoGame,['CreativeWork']
+194,T2DV2_211.csv,VideoGame,['CreativeWork']
+195,T2DV2_221.csv,VideoGame,['CreativeWork']
+196,T2DV2_23.csv,VideoGame,['CreativeWork']
+197,T2DV2_5.csv,VideoGame,['CreativeWork']
+198,T2DV2_65.csv,VideoGame,['CreativeWork']
+199,T2DV2_73.csv,VideoGame,['CreativeWork']
