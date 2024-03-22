@@ -81,7 +81,7 @@ Ensure you have the following installed:
 
 Clone the repository to your local machine:
 ```bash
-git clone https://github.com/PierreWoL/EDBTDemo
+git clone -b AllFrameworks https://github.com/PierreWoL/EDBTDemo
 ```
 Install required packages.
 ```bash
