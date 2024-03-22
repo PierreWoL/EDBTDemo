@@ -1,5 +1,5 @@
 CUDA_VISIBLE_DEVICES=7 python run_pretrain.py \
-  --task small \
+  --dataset Datasets \
   --batch_size 64 \
   --lr 5e-5 \
   --lm roberta \
