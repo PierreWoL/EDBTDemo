@@ -8,7 +8,7 @@ CUDA_VISIBLE_DEVICES=7 python run_pretrain.py \
   --size 10000 \
   --projector 768 \
   --save_model \
-  --augment_op drop_col \
+  --augment_op sample_row \
   --fp16 \
   --sample_meth head \
   --table_order column \
