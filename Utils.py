@@ -19,6 +19,7 @@ from country_list import countries_for_language
 import nltk
 nltk.download('stopwords')
 nltk.download('wordnet')
+nltk.download('punkt')
 def mkdir(path):
     folder = os.path.exists(path)
     if not folder:
