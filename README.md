@@ -64,10 +64,9 @@ The datasets have been uploaded to this project as `Datasets.zip`. Simply extrac
 - **Python 3.7.10 or higher.**
 All needed packages are specified in requirement.txt.
 
-For d3l and the Starmie framework, 
-please directly download the GitHub repositories pointed to by the submodules. 
-Follow the installation instructions provided in those repositories 
-to ensure proper setup. Once installed, they can be used as intended.
+
+This repo includes all the D3L and Starmie in the framework. If you would like to download the original framework please go to the Origin framework, which
+includes the D3L and Starmie as submodules.
 
 Ensure you have the following installed:
 - Python 3.7+ (Better to use Python 3.11)
