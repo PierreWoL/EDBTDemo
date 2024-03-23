@@ -18,6 +18,7 @@ from urllib.parse import urlparse
 from country_list import countries_for_language
 import nltk
 nltk.download('stopwords')
+nltk.download('wordnet')
 def mkdir(path):
     folder = os.path.exists(path)
     if not folder:
