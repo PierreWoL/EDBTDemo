@@ -85,6 +85,14 @@ Unzip the datasets.
 ```bash
 unzip Datasets.zip
 ```
+Install the Jupyter notebook using pip.
+```bash
+pip install jupyter notebook
+```
+Run the tutorial demo via
+```bash
+jupyter notebook DataDiscovery.ipynb
+```
 ## Optional steps
 
 **Subject Column Detection in TableMiner+**: This section needs to use the Google api for Google Custom Search
