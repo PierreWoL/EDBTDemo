@@ -10,7 +10,7 @@ set to be presented at EDBT 2024. The tutorial examines four key functionalities
 This repository hosts the Python Notebooks that bring to life the methodologies and 
 approaches covered in the tutorial titled 
 "Dataset Discovery and Exploration: State-of-the-art, Challenges, and Opportunities,"
-scheduled for presentation at EDBT 2024.
+scheduled for presentation at EDBT 2024. We also included the slides in this repo.
 The 4 dataset discovery and exploration functionalities reviewed in the tutorial are:
 
 - **Dataset Discovery.**
@@ -106,5 +106,7 @@ This project incorporates data used under the **Apache License 2.0**. We respect
 ## Citation
 If you are using the code in this repo, please cite the following in your work:
 ```bibtex
-Will provide reference later.
+Norman W. Paton, Zhenyu Wu, Dataset Discovery and Exploration: State-of-the-art, Challenges and Opportunities. 
+Proceedings 27th International Conference on Extending Database Technology (EDBT), pp. 854–857, 2024. 
+https://openproceedings.org/2024/conf/edbt/tutorial-3.pdf
 ```
