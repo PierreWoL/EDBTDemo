@@ -2,11 +2,6 @@
 
 
 
-This repository contains the Python Notebooks
-which illustrate the techniques and strategies discussed in the tutorial named
-"Dataset Discovery and Exploration: State-of-the-art, Challenges, and Opportunities," 
-set to be presented at EDBT 2024. The tutorial examines four key functionalities of dataset discovery and exploration:
-
 This repository hosts the Python Notebooks that bring to life the methodologies and 
 approaches covered in the tutorial titled 
 "Dataset Discovery and Exploration: State-of-the-art, Challenges, and Opportunities,"
@@ -61,7 +56,7 @@ The datasets have been uploaded to this project as `Datasets.zip`. Simply extrac
 
 ## Prerequisites
 ### Requirements (follows the requirement of all included framework)
-- **Python 3.7.10 or higher.**
+- **Python 3.7.10 or higher. Preferred version: 3.11.0**
 All needed packages are specified in requirement.txt.
 
 
